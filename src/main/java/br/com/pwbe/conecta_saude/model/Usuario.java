@@ -20,6 +20,9 @@ public class Usuario{
     private TipoUsuario tipo;
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
+    @ManyToOne
+    @JoinColumn(name = "unidade_saude_id")
+    private UnidadeSaude unidadeSaude;
 
     //Getters e Setters
     public Long getId(){
@@ -47,4 +50,7 @@ public class Usuario{
 
     public Especialidade getEspecialidade(){return especialidade;}
     public void setEspecialidade(Especialidade especialidade){this.especialidade = especialidade;}
+
+    public UnidadeSaude getUnidadeSaude() {return unidadeSaude;}
+    public void setUnidadeSaude(UnidadeSaude unidadeSaude) {this.unidadeSaude = unidadeSaude;}
 }

@@ -23,6 +23,10 @@ public class Agendamento {
     @JoinColumn(name = "profissional_id")
     private Usuario profissional;
 
+    @ManyToOne
+    @JoinColumn(name = "unidade_saude_id")
+    private UnidadeSaude unidadeSaude;
+
     private LocalTime horaInicio;
     private LocalTime horaFim;
 
@@ -42,6 +46,9 @@ public class Agendamento {
 
     public Usuario getProfissional() {return profissional;}
     public void setProfissional(Usuario profissional) {this.profissional = profissional;}
+
+    public UnidadeSaude getUnidadeSaude() {return unidadeSaude;}
+    public void setUnidadeSaude(UnidadeSaude unidadeSaude) {this.unidadeSaude = unidadeSaude;}
 
     public LocalTime getHoraInicio() {return horaInicio;}
     public void setHoraInicio(LocalTime horaInicio) {this.horaInicio = horaInicio;}

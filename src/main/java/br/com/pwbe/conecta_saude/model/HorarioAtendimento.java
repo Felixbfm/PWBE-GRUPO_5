@@ -14,6 +14,10 @@ public class HorarioAtendimento{
     @JoinColumn(name = "profissional_id")
     private Usuario profissional;
 
+    @ManyToOne
+    @JoinColumn(name = "unidade_saude_id")
+    private UnidadeSaude unidadeSaude;
+
     @Enumerated(EnumType.STRING)
     private DayOfWeek diaSemana;
 
@@ -27,8 +31,11 @@ public class HorarioAtendimento{
     public Usuario getProfissional() {return profissional;}
     public void setProfissional(Usuario profissional) {this.profissional = profissional;}
 
-    public DayOfWeek getDia_semana() {return diaSemana;}
-    public void setDia_semana(DayOfWeek dia_semana) {this.diaSemana = diaSemana;}
+    public UnidadeSaude getUnidadeSaude() {return unidadeSaude;}
+    public void setUnidadeSaude(UnidadeSaude unidadeSaude) {this.unidadeSaude = unidadeSaude;}
+
+    public DayOfWeek getDiaSemana() {return diaSemana;}
+    public void setDiaSemana(DayOfWeek diaSemana) {this.diaSemana = diaSemana;}
 
     public LocalTime getHoraInicio() {return horaInicio;}
     public void setHoraInicio(LocalTime horaInicio) {this.horaInicio = horaInicio;}
